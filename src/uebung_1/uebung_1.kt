@@ -6,7 +6,7 @@ val constant: Int = 5
 fun isBiggerThenConstant(x: Int) = x > constant
 
 fun main() {
-    print("")
+    print(-5%3)
 }
 
 
@@ -187,7 +187,7 @@ fun modulo(x: Int, y: Int) = x - (y * (x / y))
 
 // Aufgabe 6
 // REQUIRES: n > 0
-fun factorialRecursive(n: Int): Int {
+fun factorialRecursive(n: Long): Long {
     if (n <= 1) return 1
     else return n * factorialRecursive(n - 1)
 }

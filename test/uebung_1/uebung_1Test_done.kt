@@ -12,7 +12,7 @@ internal class uebung_1Test_done {
         assertEquals(false, isBiggerThenConstant(2))
         assertEquals(false, isBiggerThenConstant(-5))
         assertEquals(true, isBiggerThenConstant(100))
-        assertEquals(true, isBiggerThenConstant(0))
+        assertEquals(false, isBiggerThenConstant(0))
     }
 
     @Test
