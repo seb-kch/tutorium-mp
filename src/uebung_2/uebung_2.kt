@@ -38,6 +38,34 @@ fun binaryStringToDecimal(input: String): Long {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Aufgabe 2
 
 fun isPrime(n: Int): Boolean {
@@ -49,6 +77,31 @@ fun isPrime(n: Int): Boolean {
     }
     return true
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Aufgabe 3
 fun reverseString(input: String): String {
@@ -65,8 +118,57 @@ fun reverseStringRecursive(input: String): String {
     else return reverseStringRecursive(input.drop(1)) + input[0]
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Aufgabe 4
 fun countWords(input: String): Int = input.split(' ', '\n', '\t').count { it.isNotEmpty() }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Aufgabe 5
@@ -79,6 +181,33 @@ fun checkParenthesis(s: String): Boolean {
     }
     return openBracketsCount == 0
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Aufgabe 6
 fun caesarEncrypt(s: String, offset: Int): String {
@@ -99,29 +228,76 @@ fun caesarEncrypt(s: String, offset: Int): String {
     return result
 }
 
-// Aufgabe Weihnachtsbaum
-fun christmasTree(size: Int): String {
-    var tree = ""
-    val columnAmount = size * 2 - 1
-    var remainingHeight = size
-    var xAmount = 1
-    for (row in 1..size) {
-        var xCount = 0
-        for (column in 1..columnAmount) {
-            if (column < remainingHeight) tree += '_'
-            else {
-                if (xCount < xAmount) {
-                    tree += 'x'
-                    xCount++
-                } else tree += '_'
-            }
+/**
+ * @author Eren
+ */
+fun caesarEncryptEren(s:String, offset:Int):String{
+    var encryptedString = ""
+    for (c in s){
+        if (c.isLetter()){
+            val base = if (c.isUpperCase()) 'A' else 'a'
+            val shifted = ((c.minus(base).plus(offset))%26 + 26) % 26
+            encryptedString += base.plus(shifted)
         }
-        xAmount += 2
-        remainingHeight--
-        tree += '\n'
+        else encryptedString += c
     }
-    return tree
+    return encryptedString
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Aufgabe Weihnachtsbaum
+/**
+ * @author Eren
+ */
+fun christmasTree(size: Int): String {
+    var triangle = ""
+    for (i in 1..size) {
+        triangle += "_".repeat(size - i) + "*".repeat(2 * i - 1) + "_".repeat(size - i) + "\n"
+    }
+    return triangle
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 fun main() {
     println(christmasTree(10))
