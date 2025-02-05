@@ -86,6 +86,22 @@ fun isPrime(n: Int): Boolean {
 
 
 
+fun isPrime2(i: Int): Boolean {
+    if (i < 2) return false
+    else {
+        var n: Int = i-1
+        while (n >= 2) {
+            if (i % n == 0) return false
+            n--
+        }
+        return true
+    }
+}
+
+
+
+
+
 
 
 
@@ -149,8 +165,13 @@ fun reverseStringRecursive(input: String): String {
 // Aufgabe 4
 fun countWords(input: String): Int = input.split(' ', '\n', '\t').count { it.isNotEmpty() }
 
-
-
+/**
+ * @author Eren
+ */
+fun countWordsRegex(s:String): Int {
+    if (s == "") return 0
+    return s.replace("\\s+".toRegex(), " ").trim().split(" ").size
+}
 
 
 

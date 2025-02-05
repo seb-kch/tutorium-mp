@@ -32,14 +32,14 @@ internal class uebung_2Test_done {
 
     @Test
     fun testIsPrime() {
-        assertEquals(true, isPrime(3))
-        assertEquals(true, isPrime(5))
-        assertEquals(true, isPrime(2))
-        assertEquals(false, isPrime(1))
-        assertEquals(false, isPrime(0))
-        assertEquals(false, isPrime(6))
-        assertEquals(false, isPrime(4))
-        assertEquals(true, isPrime(99991))
+        assertEquals(true, isPrime2(3))
+        assertEquals(true, isPrime2(5))
+        assertEquals(true, isPrime2(2))
+        assertEquals(false, isPrime2(1))
+        assertEquals(false, isPrime2(0))
+        assertEquals(false, isPrime2(6))
+        assertEquals(false, isPrime2(4))
+        assertEquals(true, isPrime2(99991))
     }
 
     @Test
@@ -105,6 +105,16 @@ internal class uebung_2Test_done {
         assertEquals("Ebiil!", caesarEncrypt("Hello!", -3));
         assertEquals("Yza", caesarEncrypt("Abc", -2));
         assertEquals("Olccb", caesarEncrypt("Lizzy", 3));
+    }
+
+    @Test
+    fun testChristmasTree() {
+        assertEquals(
+            "___*___\n" +
+                "__***__\n" +
+                "_*****_\n" +
+                "*******\n",
+            christmasTree(4))
     }
 }
 
